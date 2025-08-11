@@ -1,0 +1,172 @@
+ id,Test Case,Precondition,Steps,Test Technique,Test Data,Expected Result,Environment,Actual Result,Test Status (Pass / Fail) ,"Jira Bug Link 
+(if applicable)"
+Notifications,,,,,,,,,,
+N-01,Verify a push notification is received exactly 2 hours before an order's delivery deadline (at 9:59 PM).,"- A courier is logged in and has an active order in the ""My orders"" tab.
+- The order has a delivery date and time set.
+- The current time is exactly 2 hours before the order's 11:59 p.m. delivery deadline (i.e., 9:59 p.m. on the delivery day).
+- The device has an active internet connection.
+- App permissions for notifications are enabled.
+","- Set up an order with a specific delivery date.
+- Advance system time (or wait) until it is exactly 9:59 p.m. on the delivery date.
+- Observe the device's notification bar/center.",Positive Testing,"Customer: John Doe
+Address: 123 Main St, Apt 4B
+Phone Number: +1234567890
+Delivery Date: 2025-07-25
+Rental period: 1
+The scooter's color: black","A push notification appears with the text: ""2 hours to the end of the order. The order ""State St 1214"" must be completed before 11:59 p.m. If you can't make it in time, alert support: 0101"".","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",Notification did not appear at 10:00pm,Fail,https://lwrighttech.atlassian.net/browse/S9-16
+N-02,Verify the content of the 2-hour delivery reminder push notification.,"- Test Case N-01 has been executed and passed.
+- The push notification is visible in the notification bar/center.","- Open the notification bar/center.
+- Read the text of the push notification.",Positive Testing,"Customer: John Doe
+Address: 123 Main St, Apt 4B
+Phone Number: +1234567890
+Delivery Date: 2025-07-25
+Rental period: 2
+The scooter's color: grey","The push notification contains the exact text: ""2 hours to the end of the order. The order ""State St 1214"" must be completed before 11:59 p.m. If you can't make it in time, alert support: 0101"".","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",Notification did not appear at 10:00pm,Fail,https://lwrighttech.atlassian.net/browse/S9-16
+N-03,Verify no notification is sent if the order is completed before the 2-hour deadline.,"- A courier is logged in and has an active order in the ""My orders"" tab.
+- The order has a delivery date and time set.
+- The current time is 9:58 p.m. on the delivery day.
+- The device has an active internet connection.
+- App permissions for notifications are enabled.","- Set up an order with a specific delivery date.
+- Advance system time (or wait) until it is 9:58 p.m. on the delivery date.
+- Observe the device's notification bar/center
+",Negative Testing,"Customer: Jane Smith
+Address: 456 Oak Ave, Suite 100
+Phone Number: +1987654321
+Delivery Date: 2025-07-26
+Rental period: 3
+The scooter's color: black","No ""2 hours to the end of the order"" push notification appears.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Fail,Blocked by N-01
+N-04,Verify no push notification is received less than 2 hours before the delivery deadline (at 10:00 PM).,"- A courier is logged in and has an active order in the ""My orders"" tab.
+- The order has a delivery date and time set.
+- The current time is 10:00 p.m. on the delivery day.
+- The device has an active internet connection.
+- App permissions for notifications are enabled.","- Set up an order with a specific delivery date.
+- Advance system time (or wait) until it is 10:00 p.m. on the delivery date.
+- Observe the device's notification bar/center.",Negative Testing,"Customer: Alice Johnson
+Address: 789 Pine Ln, Unit C
+Phone Number: +1122334455
+Delivery Date: 2025-07-27
+Rental period: 4
+The scooter's color: grey","No ""2 hours to the end of the order"" push notification appears.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Fail,Blocked by N-01
+N-05,Verify a push notification is received when the app is active and 2 hours remain until the delivery deadline.,"- A courier is logged in and has an active order in the ""My orders"" tab.
+- The order has a delivery date and time set.
+- The current time is exactly 9:59 p.m. on the delivery day.
+- The device has an active internet connection.
+- App permissions for notifications are enabled.
+- The application is currently in the foreground and active.","- Ensure the app is open and in the foreground.
+- Set up an order with a specific delivery date.
+- Advance system time (or wait) until it is exactly 9:59 p.m. on the delivery date.
+- Observe the device's notification bar/center and any in-app notification mechanisms.",Positive Testing,"Customer: Bob Williams
+Address: 10 Elm St, Floor 2
+Phone Number: +15551234567
+Delivery Date: 2025-07-30
+Rental period: 5
+The scooter's color: black","A push notification appears in the notification bar/center. (Optionally, an in-app banner/toast notification might also appear, if implemented).","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Fail,https://lwrighttech.atlassian.net/browse/S9-16
+N-06,Verify a push notification is received when the app is minimized and 2 hours remain until the delivery deadline.,"- A courier is logged in and has an active order in the ""My orders"" tab.
+The order has a delivery date and time set.
+- The current time is exactly 9:59 p.m. on the delivery day.
+- The device has an active internet connection.
+- App permissions for notifications are enabled.
+- The application is currently minimized (in the background).","- Minimize the application.
+- Set up an order with a specific delivery date.
+- Advance system time (or wait) until it is exactly 9:59 p.m. on the delivery date.
+- Observe the device's notification bar/center.",Positive Testing,"Customer: Carol Davis
+Address: 20 Maple Ave, Bldg A
+Phone Number: +17778889999
+Delivery Date: 2025-07-31
+Rental period: 6
+The scooter's color: grey",A push notification appears in the device's notification bar/center.,"Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Fail,https://lwrighttech.atlassian.net/browse/S9-16
+N-07,Verify a push notification is received when the phone screen is off and 2 hours remain until the delivery deadline.,"- A courier is logged in and has an active order in the ""My orders"" tab.
+- The order has a delivery date and time set.
+- The current time is exactly 9:59 p.m. on the delivery day.
+- The device has an active internet connection.
+- App permissions for notifications are enabled.
+- The phone screen is currently off/locked.","- Turn off the phone screen (lock the device).
+- Set up an order with a specific delivery date.
+- Advance system time (or wait) until it is exactly 9:59 p.m. on the delivery date.
+- Observe the device for notification (e.g., screen wake-up, notification LED, sound/vibration).",Positive Testing,"Customer: David Brown
+Address: 30 Birch Rd, Apt 12
+Phone Number: +16665554444
+Delivery Date: 2025-08-01
+Rental period: 7
+The scooter's color: black","The device displays the push notification on the lock screen or in the notification bar upon screen activation. (Expected behavior may vary slightly by OS, but the notification should be delivered).","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Fail,https://lwrighttech.atlassian.net/browse/S9-16
+N-08,"Verify tapping the 2-hour delivery reminder notification leads to the ""My orders"" tab.","- A push notification for 2-hour delivery reminder is displayed in the notification bar/center.
+- The application is either in the background or closed.","- Tap the ""2 hours to the end of the order"" push notification.",Positive Testing,"Customer: John Doe
+Address: 123 Main St, Apt 4B
+Subway station: Willow Street
+Phone Number: +1234567890
+Delivery Date: 2025-07-25
+Rental period: 6
+The scooter's color: grey","The application launches/comes to the foreground and navigates directly to the ""My orders"" tab.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Fail,Blocked by N-01
+N-09,Verify 2-hour delivery notification is not received if app notification permissions are disabled.,"- A courier is logged in and has an active order.
+- The order meets the 2-hour notification criteria (e.g., 9:59 p.m. on delivery day).
+- App notification permissions are disabled via device settings.","- Disable notification permissions for the app in device settings.
+- Set up an order and advance system time to 9:59 p.m. on the delivery date.
+- Observe the device's notification bar/center.",Negative Testing,"Customer: Eve Green
+Address: 40 Cedar Dr, Unit 201
+Phone Number: +19998887777
+Delivery Date: 2025-08-02
+Rental period: 5
+The scooter's color: black","No ""2 hours to the end of the order"" push notification appears.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Fail,Blocked by N-01
+,,,,,,,,,,
+Lack of Internet Connection,,,,,,,,,,
+F-01,"Login screen: Verify ""No Internet connection"" pop-up appears when an active button is tapped without internet.","- Application is open on the login screen
+- Internet connection is disabled (Wi-Fi off, Mobile Data off).","1. Disable the device's internet connection.
+2. Tap on active buttons or interactive elements within the application.",Negative Testing,"Login button, question mark button, ""I don't remember my password"" link","The ""No Internet connection"" pop-up is displayed.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12","Login and ""I don't remember the password"" links do not throw a ""No internet connection"" error when mobile and internet connections are down.",Fail,https://lwrighttech.atlassian.net/browse/S9-9
+,"All orders screen: Verify ""No Internet connection"" pop-up appears when an active button is tapped without internet.","- Application is open on the All orders screen
+- Internet connection is disabled (Wi-Fi off, Mobile Data off).","1. Disable the device's internet connection.
+2. Tap on active buttons or interactive elements within the application.",Negative Testing,"All orders menu, My orders menu, ""Accept"" button on an active order, filter menu","The ""No Internet connection"" pop-up is displayed.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",Logout button still functions as usual when there's no network or mobile connection.,Fail,https://lwrighttech.atlassian.net/browse/S9-17
+,"All orders screen: Verify ""No Internet connection"" pop-up appears when an active button is tapped without internet.","- Application is open on the My orders screen
+- Internet connection is disabled (Wi-Fi off, Mobile Data off).","1. Disable the device's internet connection.
+2. Tap on active buttons or interactive elements within the application.",Negative Testing,"All orders menu, My orders menu, ""Complete"" button on an accepted order","The ""No Internet connection"" pop-up is displayed.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",Logout button still functions as usual when there's no network or mobile connection.,Fail,https://lwrighttech.atlassian.net/browse/S9-17
+F-02,"Verify ""No Internet connection"" pop-up disappears only after tapping ""Ok"".","- The ""No Internet connection"" pop-up window is currently displayed.
+- Internet connection remains disabled","1. Attempt to tap outside the pop-up window or use the device's back button (if applicable) without tapping ""Ok"".
+2. Tap the ""Ok"" button on the pop-up.
+",Negative Testing,,"The pop-up remains visible until the ""Ok"" button is tapped. Once ""Ok"" is tapped, the pop-up notification closes.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",Tapping outside the pop-up will also close it.,Fail,https://lwrighttech.atlassian.net/browse/S9-18
+F-03,"Verify ""No Internet connection"" pop-up re-appears on subsequent active zone tap if connection is still off.","- Internet connection is disabled.
+- The ""No Internet connection"" pop-up was previously displayed and closed by tapping ""Ok""
+","1. After closing the ""No Internet connection"" pop-up (internet still off), tap on another active button or interactive element.",Negative Testing,,"The ""No Internet connection"" pop-up notification re-appears.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Pass,
+F-04,Verify application functions normally after re-establishing internet connection.,"- The ""No Internet connection"" pop-up was previously displayed.
+- Internet connection is currently disabled.","1. Enable the device's internet connection (Wi-Fi or Mobile Data).
+2. Tap the ""Ok"" button on the ""No Internet connection"" pop-up (if still open), or tap any active button if it has already been closed.
+3. Perform an action that requires internet (e.g., attempt to log in, refresh order list).
+",Positive Testing,,"The application performs the intended action, demonstrating that the internet connection has been successfully recognized and utilized. If the action that triggered the pop-up was an attempted login, it will re-attempt to log in.","Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Pass,
+,,,,,,,,,,
+,,,,,,,,,,
+Composites (Figma),,,,,,,,,,
+C-01,Composites match: Login screen,- Application is open to Login screen,1. Compare login screen to composites in Figma,Positive Testing,,Login screen matches composites in figma,"Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",When user hits enter/return in the username field a new line is created.,Fail,"https://lwrighttech.atlassian.net/browse/S9-14
+https://lwrighttech.atlassian.net/browse/S9-15"
+C-02,"Composites match: All orders screen, empty","- A courier has been created
+- The courier is logged-in to the app
+- Application is open to All orders screen",1. Compare All orders screen to composites in Figma,Positive Testing,,All orders screen matches composites in figma,"Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Pass,
+C-03,"Composites match: My orders screen, empty","-  A courier has been created
+- The courier is logged-in to the app
+- Application is open to My orders screen",1. Compare My orders screen to composites in Figma,Positive Testing,,My orders screen matches composites in figma,"Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",A notification dot appears on the My orders menu whether or not the courier has accepted an order.,Fail,https://lwrighttech.atlassian.net/browse/S9-13
+C-04,"Composites match: All orders screen, orders present","- A courier has been created
+- An order has been submitted
+- Courier is logged-in to the app
+- Application is open to All orders screen",1. Compare All orders screen to composites in Figma,Positive Testing,,All orders screen matches composites in figma,"Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12",,Pass,
+C-05,"Composites match: My orders screen, orders accepted","- A courier has been created
+- An order has been submitted
+- Courier is logged-in to the app
+- Courier has accepted an order
+- Application is open to My orders screen",1. Compare My orders screen to composites in Figma,Positive Testing,,My orders screen matches composites in figma,"Android Studio v2025.1.1
+Emulated device: Pixel 5, Android 12","Once accepted, orders show up twice under My orders screen.",Fail,https://lwrighttech.atlassian.net/browse/S9-12

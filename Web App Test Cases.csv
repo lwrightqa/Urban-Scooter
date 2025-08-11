@@ -1,0 +1,277 @@
+ id,Test Case,Precondition,Steps,Test Technique,Test Data,Expected Result,Environment,Actual Result,Test Status (Pass / Fail) ,"Jira Bug Link 
+(if applicable)"
+General Requirements,,,,,,,,,,
+GR-01,Landing Page matches composites,Ensure screen resolution is 1280x720.,"1. Navigate to the initial landing page with Chrome 85+.
+2. Compare the UI with Figma composites.",Positive Testing,Composite link,The appearance of the landing page matches the Figma composites.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",Overlapping page elements after scrolling down. See screenshots.,Fail,https://lwrighttech.atlassian.net/browse/S9-5
+GR-02,Order Page matches composites,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Navigate to the order page with Chrome 85+.
+2. Compare the UI with Figma composites.",Positive Testing,Composite link,The appearance of the order page matches the Figma composites.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Subway station field label is darker than it should be, per the composites.",Fail,https://lwrighttech.atlassian.net/browse/S9-6
+,,,,,,,,,,
+First Name Field,,,,,,,,,,
+FN-01,Field appearance matches composites,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Find and evaluate the ""First name"" input field.
+2. Compare the UI with Figma composites.",Positive Testing,Composite link,"The appearance of the text field, in all states (blank, error, filled-out) match the Figma composites.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+FN-02,Test the field with zero characters,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter no text input.",Negative Testing,(blank),"Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-03,Test the field with a name just below the minimum character boundary. (1),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Negative Testing,A,"Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-04,Test the field with a valid name at the minimum character boundary. (2),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Positive Testing,An,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+FN-05,Test the field with a valid name just above the minimum character boundary. (3),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Positive Testing,Ann,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+FN-06,Test the field with a valid name from the middle of the equivalence class. (7),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Positive Testing,Jackson,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+FN-07,Test the field with a valid name 1 below the maximum character boundary. (14),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Positive Testing,Alexandriana,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+FN-08,Test the field with a valid name at the maximum character boundary. (15),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Positive Testing,Bartholomew-Jon,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+FN-09,Test the field with a name 1 above the maximum character boundary. (16),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Negative Testing,Jean Luc Pierres,"Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-10,Test the field with a name 2 above the maximum character boundary. (17),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Negative Testing,Sarah-Jane-Marie,"Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-11,Test the field with a name containing numerical characters.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Negative Testing,David123,"Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-12,Test the field with a name containing symbols.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Negative Testing,David!@#,"Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-13,Test the field with a name containing non-Latin characters.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Negative Testing,Иван,"Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-14,Test the field with a name containing periods.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Negative Testing,J. Benjamin,"Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-15,Test the field with a name containing commas.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Negative Testing,"Ger,ald","Should trigger a ""Enter correct name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-1
+FN-16,Test the field with a name containing spaces.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""First name"" input field.
+2. Enter text input.",Positive Testing,Kelly Ann,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+,,,,,,,,,,
+Last Name Field,,,,,,,,,,
+LN-01,Field appearance matches composites,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Find and evaluate the ""Last name"" input field.
+2. Compare the UI with Figma composites.",Positive Testing,Composite link,"The appearance of the text field, in all states (blank, error, filled-out) match the Figma composites.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+LN-02,Test the field with zero characters,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,(blank),"Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-11
+LN-03,Test the field with a valid last name just below the minimum character boundary. (1),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,L,"Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-11
+LN-04,Test the field with a valid last name at the minimum character boundary. (2),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Positive Testing,Le,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+LN-05,Test the field with a valid last name just above the minimum character boundary. (3),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Positive Testing,Lee,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+LN-06,Test the field with a valid last name from the middle of the equivalence class. (7),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Positive Testing,Emerson,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+LN-07,Test the field with a valid last name 1 below the maximum character boundary. (14),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Positive Testing,Smith-Johnson,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+LN-08,Test the field with a valid last name at the maximum character boundary. (15),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Positive Testing,Washington-Lee,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+LN-09,Test the field with a last name 1 above the maximum character boundary. (16),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,Van Der Bilt-X,"Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",Text entry is accepted by the system and no error appears.,Fail,https://lwrighttech.atlassian.net/browse/S9-2
+LN-10,Test the field with a last name 2 above the maximum character boundary. (17),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,ThisLastNamesLong,"Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",Text entry is accepted by the system and no error appears.,Fail,https://lwrighttech.atlassian.net/browse/S9-2
+LN-11,Test the field with a last name containing numerical characters.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,Wright123,"Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-11
+LN-12,Test the field with a last name containing symbols.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,Wright!@#,"Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-11
+LN-13,Test the field with a last name containing non-Latin characters.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,Петров,"Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-11
+LN-14,Test the field with a name containing periods.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,St. John,"Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-11
+LN-15,Test the field with a name containing commas.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Negative Testing,"Orlando, Fl","Should trigger a ""Enter a valid last name"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid name"".",Fail,https://lwrighttech.atlassian.net/browse/S9-11
+LN-16,Test the field with a name containing spaces.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Last name"" input field.
+2. Enter text input.",Positive Testing,Lopez Smith,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+,,,,,,,,,,
+Address Field,,,,,,,,,,
+AD-01,Field appearance matches composites,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Find and evaluate the ""Address"" input field.
+2. Compare the UI with Figma composites.",Positive Testing,Composite link,"The appearance of the text field, in all states (blank, error, filled-out) match the Figma composites.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-02,Test the field with zero characters,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Negative Testing,(blank),"Field outline should turn red
+Should trigger a ""Enter a valid address"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",Blank field is accepted by the system and no error appears. User can proceed to next field.,Fail,https://lwrighttech.atlassian.net/browse/S9-7
+AD-03,Test the field with an address 2 below the minimum character boundary. (3),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Negative Testing,Rte,"Field outline should turn red
+Should trigger a ""Enter a valid address"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-3
+AD-04,Test the field with an address 1 below the minimum character boundary. (4),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Negative Testing,Blvd,"Field outline should turn red
+Should trigger a ""Enter a valid address"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-3
+AD-05,Test the field with a valid address at the minimum character boundary. (5),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Positive Testing,5Pine,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-06,Test the field with a valid address 1 above the minimum character boundary. (6),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Positive Testing,PineSt,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-07,Test the field with a valid address from the middle of the equivalence class. (25),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Positive Testing,"999 Cherry Blvd, Unit 1",Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-08,Test the field with a valid address 1 below the maximum character boundary (49),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Positive Testing,"567 Pine Street, Unit 3A, North Building, 2nd Fl",Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-09,Test the field with a valid address at the maximum character boundary. (50),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Positive Testing,"1234 Oakwood Lane, Apt. 5B, Building 7, Suite 100",Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-10,Test the field with an address 1 above the maximum character boundary. (51),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Negative Testing,"890 Maple Avenue, Apartment 12C, South Tower, Floor 5","Should trigger a ""Enter a valid address"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-3
+AD-11,Test the field with an address 2 above the maximum character boundary. (52),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Negative Testing,"112 Elm Drive, Unit 4D, West Wing, Office 301, Annex","Should trigger a ""Enter a valid address"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-3
+AD-12,Test the field with an address from the maximum equivalence class. (75),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Negative Testing,"42 Oakwood Drive, Apt 3B, Pleasantville, NY 10570-1234","Should trigger a ""Enter a valid address"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-3
+AD-13,Test the field with an address containing dashes.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Positive Testing,124-5 Maple Street,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-14,Test the field with an address containing periods.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Positive Testing,124 Maple St.,Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-15,Test the field with an address containing commas.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Positive Testing,"125 Maple Street, Apt 28",Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+AD-16,Test the field with an address containing disallowed symbols.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Negative Testing,123 Main St #4,"Should trigger a ""Enter a valid address"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-3
+AD-17,Test the field with an address containing non-Latin symbols.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Address"" input field.
+2. Enter text input.",Negative Testing,Петров Bl,"Should trigger a ""Enter a valid address"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-3
+,,,,,,,,,,
+Phone Field,,,,,,,,,,
+PH-01,Field appearance matches composites,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Find and evaluate the ""Phone"" input field.
+2. Compare the UI with Figma composites.",Positive Testing,Composite link,"The appearance of the text field, in all states (blank, error, filled-out) match the Figma composites.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+PH-02,Test the field with zero characters,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,(blank),"Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-03,Test the field with a phone number 1 below the minimum character boundary. (9),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+123456789""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-04,Test the field with a valid phone number at the minimum character boundary. (10),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Positive Testing,"""+1234567891""",Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+PH-05,Test the field with a valid phone number from the middle of the equivalence class. (11),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Positive Testing,"""+12345678912""",Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+PH-06,Test the field with a valid phone number at the maximum character boundary. (12),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Positive Testing,"""+123456789123""",Text entry is valid and no error appears.,"OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)",,Pass,
+PH-07,Test the field with a phone number 1 above the maximum character boundary. (13),"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+1234567891234""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-08,Test the field with a phone number that does not start with the '+' symbol.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""1234567890""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-09,Test the field with a phone number containing letters.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+1ABC2DEF3GHI""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-10,Test the field with a phone number containing spaces.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+123 456 789""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-11,Test the field with a phone number containing symbols (other than +).,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+123@456&891""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-12,Test the field with a phone number containing non-Latin characters.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+123т456о789""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-13,Test the field with a phone number containing dashes,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+123-456-789""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-14,Test the field with a phone number containing periods.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+123.456.789.""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4
+PH-15,Test the field with a phone number containing commas.,"Ensure screen resolution is 1280x720.
+Navigate from the landing page to the Order page.","1. Select the ""Phone"" input field.
+2. Enter text input.",Negative Testing,"""+123,456,789""","Should trigger a ""Enter a valid phone number"" error.","OS: Windows 10 Home
+Browser: Google Chrome Ver. 138.0.7204.101 (64-bit)","Error message reads, ""Enter a valid number""",Fail,https://lwrighttech.atlassian.net/browse/S9-4

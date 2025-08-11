@@ -1,0 +1,54 @@
+ id,Test Case,Precondition,Steps,Test Technique,Test Data (Request Body),Expected Result,Environment,Actual Result,Test Status (Pass / Fail) ,"Jira Bug Link 
+(if applicable)"
+Couriers,,,,,,,,,,
+C-01,Successful Courier Deletion (No Linked Orders),A courier account exists and has no associated orders.,"1. Send DELETE request to /api/v1/courier/:id
+.",Positive Testing,"Path params: 3
+ 
+{
+    ""id"": ""3""
+}","1. HTTP Status Code 200 OK is returned.
+2. The courier record with 3 is removed from the Couriers table in the database.","1. HTTP Status Code 200 OK is returned.
+2. The courier record with 3 is removed from the Couriers table in the database.","1. HTTP Status Code 200 OK is returned.
+2. The courier record with 3 is removed from the Couriers table in the database.",Pass,
+C-02,Successful Courier Deletion (With Linked Orders),A courier account exists and has several associated orders in the Orders table.,1. Send DELETE request to /api/v1/courier/:id,Positive Testing,"Path params: 4
+ 
+{
+    ""id"": ""4""
+}","1. HTTP Status Code 200 OK is returned.
+2. The courier record with 4 is removed from the Couriers table.
+3. All orders linked to 4 are removed from the Orders table.","1. HTTP Status Code 200 OK is returned.
+2. The courier record with 4 is removed from the Couriers table.
+3. All orders linked to 4 are removed from the Orders table.","1. HTTP Status Code 200 OK is returned.
+2. The courier record with 4 is removed from the Couriers table.
+3. All orders linked to 4 are removed from the Orders table.",Pass,
+C-03,Delete Non-Existent Courier,None,1. Send DELETE request to /api/v1/courier/:id where the courier ID is nonexistent,Negative Testing,"Path params: 679
+ 
+{
+    ""id"": ""679""
+}","1. HTTP Status Code 404 Not Found (or 400 Bad Request) is returned.
+2. An appropriate error message indicating the courier was not found is returned.
+3. No changes are made to the database.","1. HTTP Status Code 404 Not Found (or 400 Bad Request) is returned.
+2. An appropriate error message indicating the courier was not found is returned.
+3. No changes are made to the database.","1. HTTP Status Code 404 Not Found (or 400 Bad Request) is returned.
+2. An appropriate error message indicating the courier was not found is returned.
+3. No changes are made to the database.",Pass,
+C-04,Delete Courier with Invalid ID Format,None,1. Send DELETE request to /api/v1/courier/:id where the format of the id is invalid (non-numeric),Negative Testing,"Path params: 7E
+ 
+{
+    ""id"": ""7E""
+}","1. An error code is returned.
+2. An appropriate error message indicating invalid ID format is returned.
+3. No changes are made to the database.",,"1. A 500 error is returned.
+2. An appropriate error message indicating invalid ID format is returned.
+3. No changes are made to the database.""",Pass,
+C-05,Delete Courier with Missing ID,None,1. Send DELETE request to /api/v1/courier/,Negative Testing,"Path params: 
+ 
+{
+    ""id"": """"
+}","1. HTTP Status Code 404 Not Found
+2. An appropriate error message is returned.
+3. No changes are made to the database.","1. HTTP Status Code 404 Not Found (or 405 Method Not Allowed if the route is not defined without an ID).
+2. An appropriate error message is returned.
+3. No changes are made to the database.","1. HTTP Status Code 404 Not Found
+2. An appropriate error message is returned.
+3. No changes are made to the database.",Pass,
