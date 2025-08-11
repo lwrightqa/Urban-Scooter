@@ -122,30 +122,29 @@ F-01,"Login screen: Verify ""No Internet connection"" pop-up appears when an act
 - Internet connection is disabled (Wi-Fi off, Mobile Data off).","1. Disable the device's internet connection.
 2. Tap on active buttons or interactive elements within the application.",Negative Testing,"Login button, question mark button, ""I don't remember my password"" link","The ""No Internet connection"" pop-up is displayed.","Android Studio v2025.1.1
 Emulated device: Pixel 5, Android 12","Login and ""I don't remember the password"" links do not throw a ""No internet connection"" error when mobile and internet connections are down.",Fail,https://lwrighttech.atlassian.net/browse/S9-9
-,"All orders screen: Verify ""No Internet connection"" pop-up appears when an active button is tapped without internet.","- Application is open on the All orders screen
+F-02,"All orders screen: Verify ""No Internet connection"" pop-up appears when an active button is tapped without internet.","- Application is open on the All orders screen
 - Internet connection is disabled (Wi-Fi off, Mobile Data off).","1. Disable the device's internet connection.
 2. Tap on active buttons or interactive elements within the application.",Negative Testing,"All orders menu, My orders menu, ""Accept"" button on an active order, filter menu","The ""No Internet connection"" pop-up is displayed.","Android Studio v2025.1.1
 Emulated device: Pixel 5, Android 12",Logout button still functions as usual when there's no network or mobile connection.,Fail,https://lwrighttech.atlassian.net/browse/S9-17
-,"All orders screen: Verify ""No Internet connection"" pop-up appears when an active button is tapped without internet.","- Application is open on the My orders screen
+F-03,"All orders screen: Verify ""No Internet connection"" pop-up appears when an active button is tapped without internet.","- Application is open on the My orders screen
 - Internet connection is disabled (Wi-Fi off, Mobile Data off).","1. Disable the device's internet connection.
 2. Tap on active buttons or interactive elements within the application.",Negative Testing,"All orders menu, My orders menu, ""Complete"" button on an accepted order","The ""No Internet connection"" pop-up is displayed.","Android Studio v2025.1.1
 Emulated device: Pixel 5, Android 12",Logout button still functions as usual when there's no network or mobile connection.,Fail,https://lwrighttech.atlassian.net/browse/S9-17
-F-02,"Verify ""No Internet connection"" pop-up disappears only after tapping ""Ok"".","- The ""No Internet connection"" pop-up window is currently displayed.
+F-04,"Verify ""No Internet connection"" pop-up disappears only after tapping ""Ok"".","- The ""No Internet connection"" pop-up window is currently displayed.
 - Internet connection remains disabled","1. Attempt to tap outside the pop-up window or use the device's back button (if applicable) without tapping ""Ok"".
 2. Tap the ""Ok"" button on the pop-up.
 ",Negative Testing,,"The pop-up remains visible until the ""Ok"" button is tapped. Once ""Ok"" is tapped, the pop-up notification closes.","Android Studio v2025.1.1
 Emulated device: Pixel 5, Android 12",Tapping outside the pop-up will also close it.,Fail,https://lwrighttech.atlassian.net/browse/S9-18
-F-03,"Verify ""No Internet connection"" pop-up re-appears on subsequent active zone tap if connection is still off.","- Internet connection is disabled.
+F-05,"Verify ""No Internet connection"" pop-up re-appears on subsequent active zone tap if connection is still off.","- Internet connection is disabled.
 - The ""No Internet connection"" pop-up was previously displayed and closed by tapping ""Ok""
 ","1. After closing the ""No Internet connection"" pop-up (internet still off), tap on another active button or interactive element.",Negative Testing,,"The ""No Internet connection"" pop-up notification re-appears.","Android Studio v2025.1.1
 Emulated device: Pixel 5, Android 12",,Pass,
-F-04,Verify application functions normally after re-establishing internet connection.,"- The ""No Internet connection"" pop-up was previously displayed.
+F-06,Verify application functions normally after re-establishing internet connection.,"- The ""No Internet connection"" pop-up was previously displayed.
 - Internet connection is currently disabled.","1. Enable the device's internet connection (Wi-Fi or Mobile Data).
 2. Tap the ""Ok"" button on the ""No Internet connection"" pop-up (if still open), or tap any active button if it has already been closed.
 3. Perform an action that requires internet (e.g., attempt to log in, refresh order list).
 ",Positive Testing,,"The application performs the intended action, demonstrating that the internet connection has been successfully recognized and utilized. If the action that triggered the pop-up was an attempted login, it will re-attempt to log in.","Android Studio v2025.1.1
 Emulated device: Pixel 5, Android 12",,Pass,
-,,,,,,,,,,
 ,,,,,,,,,,
 Composites (Figma),,,,,,,,,,
 C-01,Composites match: Login screen,- Application is open to Login screen,1. Compare login screen to composites in Figma,Positive Testing,,Login screen matches composites in figma,"Android Studio v2025.1.1
