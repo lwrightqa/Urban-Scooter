@@ -38,9 +38,7 @@ This section focuses on the backend API for courier management.
 
 ### How to Navigate This Repository
 * **`Mobile Test Cases - Test Cases.csv`**: Contains test cases for the Android mobile application.
-* **`Web App Test Cases - EC and BV.csv`**: Outlines the Equivalence Class and Boundary Value analysis used to create the web app's form field test cases.
-* **`Web App Test Cases - Test Cases (Chrome).csv`**: Specific test cases for the web app when tested on Google Chrome.
-* **`Web App Test Cases - Test Cases (Opera).csv`**: Specific test cases for the web app when tested on Opera One.
+* **`Web App Test Cases - Test Cases.csv`**: Specific test cases for the web app when tested on Google Chrome.
 * **`Backend Test Cases - Test Cases.csv`**: API test cases for the courier management backend.
 
 Feel free to explore the files to see examples of my work in action.
