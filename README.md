@@ -10,6 +10,7 @@ This repository contains a collection of test cases for a scooter delivery appli
 ### Test Case Breakdown
 The test cases are organized into three main categories:
 
+<img width="433" height="757" alt="Screenshot 2025-07-24 153903" src="https://github.com/user-attachments/assets/08b8fe5d-71ad-4c7d-9d2c-718bd906c9c7" />
 **1. Mobile App Testing (`Mobile Test Cases.csv`)**
 
 This section focuses on the mobile application for couriers. Key areas tested include:
@@ -17,6 +18,7 @@ This section focuses on the mobile application for couriers. Key areas tested in
 * **Internet Connectivity:** Testing the app's behavior when the internet connection is lost, including the display and dismissal of "No Internet connection" pop-ups.
 * **Composites (UI) Matching:** Ensuring the app's interface (Login, All orders, My orders screens) aligns with the Figma design composites.
 
+<img width="1564" height="776" alt="Screenshot 2025-07-21 131732" src="https://github.com/user-attachments/assets/a2146931-db06-4526-bd42-18cc775070d5" />
 **2. Web App Testing (`Web App Test Cases.csv`)**
 
 These test cases evaluate the web application on different browsers (Chrome and Opera).
@@ -24,7 +26,6 @@ These test cases evaluate the web application on different browsers (Chrome and 
 * **Form Field Validation:** Extensive testing of the "First Name," "Last Name," "Address," and "Phone" input fields using boundary value analysis and equivalence class partitioning to ensure proper data validation and error messaging.
 
 **3. Backend API Testing (`Backend Test Cases.csv`)**
-
 This section focuses on the backend API for courier management.
 * **Courier Deletion Endpoint (`DELETE /api/v1/courier/:id`):** Testing the deletion of courier accounts under different conditions, including couriers with and without linked orders, non-existent IDs, and invalid ID formats.
 
